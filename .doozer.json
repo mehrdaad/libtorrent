@@ -19,11 +19,10 @@
     "macOS": {
       "buildenv": "osx",
       "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
-      "buildcmd": [ "ls -la ${HOME}/homebrew/include",
-         "ls -la ${HOME}/homebrew/opt",
-         "ls -la ${HOME}/homebrew/opt/local",
-         "ls -la ${HOME}/homebrew/opt/local/include",
-         "cd test", "b2 -j${PARALLEL} crypto=openssl include=${HOME}/homebrew/include"]
+      "buildcmd": [
+         "cd test",
+         "b2 -j${PARALLEL} crypto=openssl include=${HOME}/homebrew/include"
+      ]
     }
   }
 }
