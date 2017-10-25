@@ -1,10 +1,25 @@
 {
   "submodules": ["simulation/libsimulator"],
   "targets": {
+    "xenial-amd64": {
+      "buildenv": "xenial-amd64",
+      "builddeps": ["build-essential", "libssl-dev", "libboost-dev"],
+      "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl"]
+    },
+    "xenial-armhf": {
+      "buildenv": "xenial-armhf",
+      "builddeps": ["build-essential", "libssl-dev", "libboost-dev"],
+      "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl"]
+    },
+    "xenial-arm64": {
+      "buildenv": "xenial-arm64",
+      "builddeps": ["build-essential", "libssl-dev", "libboost-dev"],
+      "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl"]
+    },
     "macOS": {
       "buildenv": "osx",
       "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
-      "buildcmd": ["ls -la /usr/local/include", "cd test", "b2 -j${PARALLEL} crypto=openssl"]
+      "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl include=${Home}/homebrew"]
     }
   }
 }
