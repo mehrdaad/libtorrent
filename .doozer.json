@@ -3,29 +3,29 @@
   "targets": {
     "xenial-amd64": {
       "buildenv": "xenial-amd64",
-      "builddeps": ["build-essential", "libssl-dev", "libboost-dev", "libboost-tools-dev"],
+      "builddeps": ["build-essential", "libssl-dev", "libboost-dev", "libboost-all-dev"],
       "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl"]
     },
     "xenial-armhf": {
       "buildenv": "xenial-armhf",
-      "builddeps": ["build-essential", "libssl-dev", "libboost-dev", "libboost-tools-dev"],
+      "builddeps": ["build-essential", "libssl-dev", "libboost-dev", "libboost-all-dev"],
       "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl"]
     },
     "xenial-arm64": {
       "buildenv": "xenial-arm64",
-      "builddeps": ["build-essential", "libssl-dev", "libboost-dev", "libboost-tools-dev"],
+      "builddeps": ["build-essential", "libssl-dev", "libboost-dev", "libboost-all-dev"],
       "buildcmd": [ "cd test", "b2 -j${PARALLEL} crypto=openssl"]
     },
     "macOS": {
       "buildenv": "osx",
-      "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
+      "homebrew": { "formulae": ["boost-build", "openssl"] },
       "buildcmd": [
-         "ls -la ${HOME}/homebrew/opt/openssl",
-         "ls -la ${HOME}/homebrew/opt/openssl/include",
-         "ls -la ${HOME}/homebrew/opt/openssl/lib",
+         "wget -O boost.zip http://pilotfiber.dl.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.zip",
+         "unzip -qq boost.zip",
+         "export BOOST_ROOT=$PWD/boost_1_55_0",
          "cd test",
          "echo \"using darwin : : : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
-         "b2 -j${PARALLEL} crypto=openssl include=${HOME}/homebrew/include openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
+         "b2 --hash -j${PARALLEL} crypto=openssl openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
       ]
     }
   }
