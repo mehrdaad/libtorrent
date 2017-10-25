@@ -14,7 +14,7 @@
     "xenial-arm64": {
       "buildenv": "xenial-arm64",
       "builddeps": ["build-essential", "libssl-dev", "libboost-all-dev"],
-      "buildcmd": [ "cd simulation", "bjam -j${PARALLEL}"]
+      "buildcmd": [ "cd simulation", "bjam"]
     },
     "macOS": {
       "buildenv": "osx",
