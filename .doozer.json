@@ -20,12 +20,12 @@
       "buildenv": "osx",
       "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
       "buildcmd": [
-         "ls -la ${HOME}/homebrew/openssl",
-         "ls -la ${HOME}/homebrew/openssl/include",
-         "ls -la ${HOME}/homebrew/openssl/lib",
+         "ls -la ${HOME}/homebrew/opt/openssl",
+         "ls -la ${HOME}/homebrew/opt/openssl/include",
+         "ls -la ${HOME}/homebrew/opt/openssl/lib",
          "cd test",
          "echo \"using darwin : : : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
-         "b2 -j${PARALLEL} crypto=openssl include=${HOME}/homebrew/include openssl-include=${HOME}/homebrew/openssl/include openssl-lib=${HOME}/homebrew/openssl/lib"
+         "b2 -j${PARALLEL} crypto=openssl include=${HOME}/homebrew/include openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
       ]
     }
   }
