@@ -24,7 +24,7 @@
          "unzip -qq boost.zip",
          "cd test",
          "echo \"using darwin : : : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
-         "BOOST_ROOT=${PWD}../boost_1_55_0 b2 --hash -j${PARALLEL} crypto=openssl openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
+         "BOOST_ROOT=${PWD}/../boost_1_55_0 b2 --hash -j${PARALLEL} crypto=openssl openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
       ]
     }
   }
