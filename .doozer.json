@@ -21,6 +21,7 @@
       "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
       "buildcmd": [
          "cd test",
+         "echo \"using darwin : : : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
          "b2 -j${PARALLEL} crypto=openssl include=${HOME}/homebrew/include"
       ]
     }
