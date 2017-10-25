@@ -4,7 +4,7 @@
     "macOS": {
       "buildenv": "osx",
       "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
-      "buildcmd": ["cd test", "b2 -j${PARALLEL} crypto=openssl"]
+      "buildcmd": ["ls -la /usr/local/include", "cd test", "b2 -j${PARALLEL} crypto=openssl"]
     }
   }
 }
