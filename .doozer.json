@@ -22,10 +22,9 @@
       "buildcmd": [
          "wget -O boost.zip http://pilotfiber.dl.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.zip",
          "unzip -qq boost.zip",
-         "export BOOST_ROOT=$PWD/boost_1_55_0",
          "cd test",
          "echo \"using darwin : : : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
-         "b2 --hash -j${PARALLEL} crypto=openssl openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
+         "BOOST_ROOT=../BOOST_1_55_0 b2 --hash -j${PARALLEL} crypto=openssl openssl-include=${HOME}/homebrew/opt/openssl/include openssl-lib=${HOME}/homebrew/opt/openssl/lib"
       ]
     }
   }
