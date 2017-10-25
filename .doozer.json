@@ -3,7 +3,7 @@
   "targets": {
     "macOS": {
       "buildenv": "osx",
-      "homebrew": { "formulae": ["boost@1.60", "boost-build", "openssl@1.1"] },
+      "homebrew": { "formulae": ["boost", "boost-build", "openssl"] },
       "buildcmd": ["cd test", "b2 -j${PARALLEL} crypto=openssl"]
     }
   }
