@@ -18,7 +18,7 @@
     },
     "macOS": {
       "buildenv": "osx",
-      "homebrew": { "formulae": ["boost-build", "openssl"] },
+      "homebrew": { "formulae": ["boost-build", "openssl", "wget"] },
       "buildcmd": [
          "wget -O boost.zip http://pilotfiber.dl.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.zip",
          "unzip -qq boost.zip",
