@@ -1,18 +1,18 @@
 {
   "submodules": ["simulation/libsimulator"],
   "targets": {
-    "xenial-amd64": {
+    "x86_64": {
       "buildenv": "xenial-amd64",
       "builddeps": ["build-essential", "libssl-dev", "libboost-all-dev", "ccache"],
       "buildcmd": [
         "echo \"using gcc : : ccache g++ : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
         "cd simulation",
         "bjam -j${PARALLEL} deprecated-functions=off",
-        "cd ../test",
+        "cd test",
         "bjam -j${PARALLEL} deprecated-functions=off"
       ]
     },
-    "xenial-arm64": {
+    "arm-64": {
       "buildenv": "xenial-arm64",
       "builddeps": ["build-essential", "libssl-dev", "libboost-all-dev", "ccache"],
       "buildcmd": [
