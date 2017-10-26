@@ -7,7 +7,9 @@
       "buildcmd": [
         "echo \"using gcc : : ccache g++ : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
         "cd simulation",
-        "bjam -j${PARALLEL}"
+        "bjam -j${PARALLEL} deprecated-functions=off",
+        "cd ../test",
+        "bjam -j${PARALLEL} deprecated-functions=off"
       ]
     },
     "xenial-arm64": {
@@ -15,8 +17,8 @@
       "builddeps": ["build-essential", "libssl-dev", "libboost-all-dev", "ccache"],
       "buildcmd": [
         "echo \"using gcc : : ccache g++ : <cxxflags>-std=c++11 ;\" > ~/user-config.jam",
-        "cd simulation",
-        "bjam -j2"
+        "cd test",
+        "bjam -j2 deprecated-functions=off"
       ]
     },
     "macOS": {
