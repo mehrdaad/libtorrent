@@ -283,7 +283,7 @@ void bind_converters()
 {
     // C++ -> python conversions
     to_python_converter<std::pair<int, int>, pair_to_tuple<int, int>>();
-    to_python_converter<std::pair<lt::piece_index_t, int>, pair_to_tuple<lt::piece_index_t, int>>();
+    to_python_converter<std::pair<lt::piece_index_t, lt::download_priority_t>, pair_to_tuple<lt::piece_index_t, lt::download_priority_t>>();
     to_python_converter<lt::tcp::endpoint, endpoint_to_tuple<lt::tcp::endpoint>>();
     to_python_converter<lt::udp::endpoint, endpoint_to_tuple<lt::udp::endpoint>>();
     to_python_converter<lt::address, address_to_tuple<lt::address>>();
@@ -301,6 +301,7 @@ void bind_converters()
 
     to_python_converter<lt::queue_position_t, from_strong_typedef<lt::queue_position_t>>();
     to_python_converter<lt::piece_index_t, from_strong_typedef<lt::piece_index_t>>();
+    to_python_converter<lt::download_priority_t, from_strong_typedef<lt::download_priority_t>>();
     to_python_converter<lt::file_index_t, from_strong_typedef<lt::file_index_t>>();
     to_python_converter<lt::port_mapping_t, from_strong_typedef<lt::port_mapping_t>>();
     to_python_converter<lt::peer_class_t, from_strong_typedef<lt::peer_class_t>>();
@@ -345,7 +346,7 @@ void bind_converters()
     tuple_to_pair<std::string, int>();
     tuple_to_endpoint<lt::tcp::endpoint>();
     tuple_to_endpoint<lt::udp::endpoint>();
-    tuple_to_pair<lt::piece_index_t, int>();
+    tuple_to_pair<lt::piece_index_t, lt::download_priority_t>();
     dict_to_map<lt::file_index_t, std::string>();
     list_to_vector<std::vector<int>>();
     list_to_vector<std::vector<std::uint8_t>>();
@@ -364,6 +365,7 @@ void bind_converters()
 
     to_strong_typedef<lt::queue_position_t>();
     to_strong_typedef<lt::piece_index_t>();
+    to_strong_typedef<lt::download_priority_t>();
     to_strong_typedef<lt::file_index_t>();
     to_strong_typedef<lt::port_mapping_t>();
     to_strong_typedef<lt::peer_class_t>();
