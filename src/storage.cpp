@@ -93,7 +93,7 @@ namespace libtorrent {
 		file_storage const& fs = files();
 		for (file_index_t i(0); i < m_file_priority.end_index(); ++i)
 		{
-			if (m_file_priority[i] == 0 && !fs.pad_file_at(i))
+			if (m_file_priority[i] == dont_download && !fs.pad_file_at(i))
 			{
 				need_partfile();
 				break;

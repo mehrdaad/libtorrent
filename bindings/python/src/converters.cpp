@@ -294,7 +294,7 @@ void bind_converters()
     to_python_converter<std::vector<lt::sha1_hash>, vector_to_list<std::vector<lt::sha1_hash>>>();
     to_python_converter<std::vector<std::string>, vector_to_list<std::vector<std::string>>>();
     to_python_converter<std::vector<int>, vector_to_list<std::vector<int>>>();
-    to_python_converter<std::vector<std::uint8_t>, vector_to_list<std::vector<std::uint8_t>>>();
+    to_python_converter<std::vector<lt::download_priority_t>, vector_to_list<std::vector<lt::download_priority_t>>>();
     to_python_converter<std::vector<lt::tcp::endpoint>, vector_to_list<std::vector<lt::tcp::endpoint>>>();
     to_python_converter<std::vector<lt::udp::endpoint>, vector_to_list<std::vector<lt::udp::endpoint>>>();
     to_python_converter<std::vector<std::pair<std::string, int>>, vector_to_list<std::vector<std::pair<std::string, int>>>>();
@@ -336,7 +336,7 @@ void bind_converters()
     to_python_converter<lt::aux::noexcept_movable<std::vector<lt::sha1_hash>>, vector_to_list<lt::aux::noexcept_movable<std::vector<lt::sha1_hash>>>>();
     to_python_converter<lt::aux::noexcept_movable<std::vector<std::string>>, vector_to_list<lt::aux::noexcept_movable<std::vector<std::string>>>>();
     to_python_converter<lt::aux::noexcept_movable<std::vector<int>>, vector_to_list<lt::aux::noexcept_movable<std::vector<int>>>>();
-    to_python_converter<lt::aux::noexcept_movable<std::vector<std::uint8_t>>, vector_to_list<lt::aux::noexcept_movable<std::vector<std::uint8_t>>>>();
+    to_python_converter<lt::aux::noexcept_movable<std::vector<lt::download_priority_t>>, vector_to_list<lt::aux::noexcept_movable<std::vector<lt::download_priority_t>>>>();
     to_python_converter<lt::aux::noexcept_movable<std::vector<lt::tcp::endpoint>>, vector_to_list<lt::aux::noexcept_movable<std::vector<lt::tcp::endpoint>>>>();
     to_python_converter<lt::aux::noexcept_movable<std::vector<lt::udp::endpoint>>, vector_to_list<lt::aux::noexcept_movable<std::vector<lt::udp::endpoint>>>>();
     to_python_converter<lt::aux::noexcept_movable<std::vector<std::pair<std::string, int>>>, vector_to_list<lt::aux::noexcept_movable<std::vector<std::pair<std::string, int>>>>>();
@@ -349,7 +349,7 @@ void bind_converters()
     tuple_to_pair<lt::piece_index_t, lt::download_priority_t>();
     dict_to_map<lt::file_index_t, std::string>();
     list_to_vector<std::vector<int>>();
-    list_to_vector<std::vector<std::uint8_t>>();
+    list_to_vector<std::vector<lt::download_priority_t>>();
     list_to_vector<std::vector<std::string>>();
     list_to_vector<std::vector<lt::tcp::endpoint>>();
     list_to_vector<std::vector<lt::udp::endpoint>>();
@@ -357,7 +357,7 @@ void bind_converters()
 
     // work-around types
     list_to_vector<lt::aux::noexcept_movable<std::vector<int>>>();
-    list_to_vector<lt::aux::noexcept_movable<std::vector<std::uint8_t>>>();
+    list_to_vector<lt::aux::noexcept_movable<std::vector<lt::download_priority_t>>>();
     list_to_vector<lt::aux::noexcept_movable<std::vector<std::string>>>();
     list_to_vector<lt::aux::noexcept_movable<std::vector<lt::tcp::endpoint>>>();
     list_to_vector<lt::aux::noexcept_movable<std::vector<lt::udp::endpoint>>>();

@@ -173,8 +173,9 @@ namespace {
 			{
 				std::size_t const idx = std::size_t(i);
 				ret.file_priorities[idx] = aux::clamp(
-					download_priority_t(file_priority.list_int_value_at(i
-						, static_cast<std::uint8_t>(default_priority)))
+					download_priority_t(static_cast<std::uint8_t>(
+						file_priority.list_int_value_at(i
+							, static_cast<std::uint8_t>(default_priority))))
 						, dont_download, top_priority);
 				// this is suspicious, leave seed mode
 				if (ret.file_priorities[idx] == dont_download)
@@ -275,7 +276,10 @@ namespace {
 			ret.piece_priorities.resize(aux::numeric_cast<std::size_t>(piece_priority.string_length()));
 			for (std::size_t i = 0; i < ret.piece_priorities.size(); ++i)
 			{
-				ret.piece_priorities[i] = download_priority_t(aux::clamp(int(prio_str[i]), 0, 7));
+				ret.piece_priorities[i] = download_priority_t(aux::clamp(
+					static_cast<std::uint8_t>(prio_str[i])
+					, static_cast<std::uint8_t>(dont_download)
+					, static_cast<std::uint8_t>(top_priority)));
 			}
 		}
 

@@ -143,7 +143,7 @@ void prioritize_pieces(torrent_handle& info, object o)
 
    // determine which overload should be selected. the one taking a list of
    // priorities or the one taking a list of piece -> priority mappings
-   bool const is_piece_list = extract<std::pair<piece_index_t, int>>(*begin).check();
+   bool const is_piece_list = extract<std::pair<piece_index_t, download_priority_t>>(*begin).check();
 
    if (is_piece_list)
    {

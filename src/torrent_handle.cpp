@@ -497,7 +497,7 @@ namespace libtorrent {
 		aux::vector<download_priority_t, piece_index_t> p;
 		p.reserve(pieces.size());
 		for (auto const prio : pieces) {
-			p.push_back(download_priority_t(prio));
+			p.push_back(download_priority_t(static_cast<std::uint8_t>(prio)));
 		}
 		async_call(&torrent::prioritize_pieces, p);
 	}
@@ -543,7 +543,7 @@ namespace libtorrent {
 		aux::vector<download_priority_t, file_index_t> file_prio;
 		file_prio.reserve(files.size());
 		for (auto const p : files) {
-			file_prio.push_back(p);
+			file_prio.push_back(download_priority_t(static_cast<std::uint8_t>(p)));
 		}
 		async_call(&torrent::prioritize_files, file_prio);
 	}
